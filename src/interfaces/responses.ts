@@ -54,15 +54,15 @@ interface ErrorsMetadata extends DetailedResponseMetadata {
 
 export type ErrorsResponse = Response<Error, ErrorsMetadata>;
 
-interface ErrorByDay extends CountByKey {
+interface PeriodError extends CountByKey {
   userCount: number;
   trackJsUrl: string;
 }
 
-export type ErrorsByDayResponse = Response<
-  ErrorByDay,
-  DetailedResponseMetadata
->;
+type ErrorsByPeriodResponse = Response<PeriodError, DetailedResponseMetadata>;
+
+export type ErrorsByDayResponse = ErrorsByPeriodResponse;
+export type ErrorsByHourResponse = ErrorsByPeriodResponse;
 
 interface ErrorByMessage extends CountByKey, AdditionalErrorInfo {
   firstSeen: string;

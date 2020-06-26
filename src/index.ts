@@ -1,14 +1,16 @@
 import axios, { AxiosInstance } from 'axios';
 import {
   ErrorsByDayParams,
-  ErrorsParams,
-  ErrorsByMessageParams,
-  ErrorsByUrlParams,
   ErrorsByDayResponse,
+  ErrorsByHourParams,
+  ErrorsByHourResponse,
+  ErrorsByMessageParams,
   ErrorsByMessageResponse,
+  ErrorsByUrlParams,
   ErrorsByUrlResponse,
-  PageViewsByDayResponse,
+  ErrorsParams,
   ErrorsResponse,
+  PageViewsByDayResponse,
 } from './interfaces';
 
 export * from './interfaces';
@@ -54,6 +56,20 @@ export class Client {
   ): Promise<ErrorsByDayResponse> {
     return await this.axios
       .get('/errors/daily', { params })
+      .then(({ data }) => data);
+  }
+
+  /**
+   * This endpoint returns the Error count by Hour, sorted by date descending.
+   * https://docs.trackjs.com/data-api/errors-by-hour/
+   *
+   * @param params Accepted parameters
+   */
+  public async getErrorsByHour(
+    params: ErrorsByHourParams
+  ): Promise<ErrorsByHourResponse> {
+    return await this.axios
+      .get('/errors/hourly', { params })
       .then(({ data }) => data);
   }
 

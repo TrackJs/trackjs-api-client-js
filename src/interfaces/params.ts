@@ -26,5 +26,6 @@ export interface ErrorsParams extends Params {
 
 export { Params as PageViewsByDayParams };
 export { SortableParams as ErrorsByDayParams };
+export { SortableParams as ErrorsByHourParams };
 export { SortableParams as ErrorsByMessageParams };
 export { SortableParams as ErrorsByUrlParams };

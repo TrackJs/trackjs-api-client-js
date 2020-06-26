@@ -68,6 +68,19 @@ API reference: http://docs.trackjs.com/data-api/errors-by-day
 | `size`        | Number          | no       | The size of the page of data you want returned.                                                                                                                                                                                                                                                      |
 | `sort`        | String          | no       | By default the endpoint returns results sorted by date in descending order. You may adjust the sort field and sort direction. Supported fields are `date`, `count` and `usercount`. Sort directions are specified by appending `| asc` or `| desc`. Default value is `date | desc` if not specified. |
 
+### trackJs.getErrorsByHour(params)
+
+API reference: http://docs.trackjs.com/data-api/errors-by-hour
+
+| Parameter     | type            | Required | Description                                                                                                                                                                                                                                                                                          |
+| ------------- | --------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `application` | String          | no       | Filter the results to only the Application key provided.                                                                                                                                                                                                                                             |
+| `endDate`     | ISO 8601 String | no       | Filter the results to only return errors before this date and time. Time precision is within 1 second.                                                                                                                                                                                               |
+| `startDate`   | ISO 8601 String | no       | Filter the results to only return errors after this date and time. Time precision is within 1 second.                                                                                                                                                                                                |
+| `page`        | Number          | no       | The page of data you want returned. By default, the first page of data is returned.                                                                                                                                                                                                                  |
+| `size`        | Number          | no       | The size of the page of data you want returned.                                                                                                                                                                                                                                                      |
+| `sort`        | String          | no       | By default the endpoint returns results sorted by date in descending order. You may adjust the sort field and sort direction. Supported fields are `date`, `count` and `usercount`. Sort directions are specified by appending `| asc` or `| desc`. Default value is `date | desc` if not specified. |
+
 ### trackJs.getErrorsByMessage(params)
 
 API reference: http://docs.trackjs.com/data-api/errors-by-message
